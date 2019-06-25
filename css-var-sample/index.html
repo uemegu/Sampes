@@ -1,0 +1,21 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="variables1.css" type="text/css">
+    <link rel="stylesheet" href="base.css" type="text/css">
+</head>
+<body style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
+    <h1>Hello World!!</h1>
+    <button id="button">Style Change</button>
+
+    <script>
+        let flg = false;
+        document.getElementById("button").onclick = () => {
+            var link = document.querySelector('link[rel="stylesheet"]');
+            link.href = flg ? "variables1.css" : "variables2.css";
+            flg = !flg;
+        };
+    </script>
+</body>
+</html>
