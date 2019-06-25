@@ -1,0 +1,1 @@
+Sample is here: http://megyo.jp/software/samples/css-var-sample/index.html
