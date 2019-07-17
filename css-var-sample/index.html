@@ -6,15 +6,23 @@
     <link rel="stylesheet" href="base.css" type="text/css">
 </head>
 <body style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
+    <pre style="color: white;">
+        黄レンジャーはカレーが好き
+    </pre>
     <h1>Hello World!!</h1>
-    <button id="button">Style Change</button>
-
+    <br>
+    <br>
+    <button id="button" >Style Change (Replace link attribute)</button>
+    <br>
+    <button id="button2">Style Change (JavaScript)</button>
     <script>
-        let flg = false;
         document.getElementById("button").onclick = () => {
-            var link = document.querySelector('link[rel="stylesheet"]');
-            link.href = flg ? "variables1.css" : "variables2.css";
-            flg = !flg;
+            const link = document.querySelector('link[rel="stylesheet"]');
+            link.href = link.href.includes('variables1.css') ? 'variables2.css' : 'variables1.css';
+        };
+        document.getElementById('button2').onclick = () => {
+            const color = document.documentElement.style.getPropertyValue('--background');
+            document.documentElement.style.setProperty('--background', color === 'black' ? 'white' : 'black');
         };
     </script>
 </body>
